@@ -128,5 +128,5 @@ if __name__ == '__main__':
     vae = VAE()
     #fast_dev_run 은 컴파일용 이거는 train과 val을 한번씩 만 돈 다음에 잘 돌아가는 지 확인하는것
     
-    trainer = pl.Trainer(fast_dev_run = True)
+    trainer = pl.Trainer(gpus = -1, accelerator = "ddp")
     trainer.fit(vae)
